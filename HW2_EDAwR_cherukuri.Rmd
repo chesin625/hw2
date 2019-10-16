@@ -347,13 +347,13 @@ x-axis labels so that they don't obscure each other.
 ggplot(county_df) +
   geom_bar(aes(x = State, y = County), stat = "identity") + 
   labs(title="Number of counties by State in the US", x="US States", y="County") +
-  theme(axis.text.x=element_text(angle=46, hjust=1))
+  theme(axis.text.x=element_text(angle=90, hjust=1))
 ```
 
 **Hacker Extra** Modify the above bar plot to be horizontal and have bars sorted from longest to shortest. In addition, map the bar color to the Region variable.
 
 ```{r bar_counties_by_state_hackerxtra, fig.height=6}
-ggplot(county_df, aes(x =State, y = County, fill = Region)) +
+ggplot(county_df, aes(x = reorder(factor(State), State, function(x) length(x)), y = County, fill = Region)) +
   geom_bar(stat = "identity") + coord_flip() + 
   labs(title="Number of counties by State in the US", x="US States", y="County")
 ```
