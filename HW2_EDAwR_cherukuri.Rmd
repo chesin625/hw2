@@ -1,6 +1,6 @@
 ---
 title: 'HW2-EDA with R - Part1: Plotting'
-author: "misken"
+author: "scherukuri"
 date: "September 29, 2019"
 output:
   html_document:
@@ -117,11 +117,14 @@ exploring the data.
 * What differences do you notice between the structure of the two data frames.
 
 
-```{r}
+```{r eval=FALSE, include=FALSE}
 str(county_df)
 str(county_mi_df)
 summary(county_df)
 summary(county_mi_df)
+```
+
+```{r}
 sum(is.na(county_df))
 sum(is.na(county_mi_df))
 ```
@@ -160,7 +163,10 @@ quantile(county_df$Income, 0.99)
 quantile(county_df$Income, 0.75) - quantile(county_df$Income, 0.25)
 cv_units <- sd_units/mean_units
 cv_units
+
 ```
+
+
 ```{r summary_stats for IncomePerCap}
 mean1_units <- mean(county_df$IncomePerCap)
 mean1_units
@@ -175,7 +181,9 @@ quantile(county_df$IncomePerCap, 0.99)
 quantile(county_df$IncomePerCap, 0.75) - quantile(county_df$IncomePerCap, 0.25)
 cv1_units <- sd_units/mean_units
 cv1_units
+
 ```
+
 
 ```{r histo_dens}
 
