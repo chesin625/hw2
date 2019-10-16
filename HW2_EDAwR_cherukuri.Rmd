@@ -1,8 +1,10 @@
 ---
-title: "HW2-EDA with R - Part1: Plotting"
+title: 'HW2-EDA with R - Part1: Plotting'
 author: "misken"
 date: "September 29, 2019"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
 ---
 
 ```{r setup, include=FALSE}
@@ -43,6 +45,8 @@ track the .R file, the .Rmd file and your .gitignore file. Create a remote repo
 for this homework assignment in your GitHub account. Periodically push your commits
 to GitHub. When done with the assignment, paste in the URL of your GitHub project
 so that I can go look at it.
+
+https://github.com/chesin625/hw2
 
 ## Step 3 - Explore data folder
 
@@ -428,6 +432,8 @@ ggplot(county_df) +
 ```
 
 > Discussion ...
+The TotalPop has been log transformed as it was hard to interpret patterns. After transformation to log, the data is still in cluster.
+This shows there is no corelation between IncomePerCap and Log(TotalPop).
 
 ## Deliverables
 
